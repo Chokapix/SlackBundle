@@ -28,14 +28,18 @@ class Messaging
     }
 
     /**
+     * if $returnTimestamp is set to true it will return the Timestamp of the Messgae.
+     * The Request must be successfull if not it will return the complete Response
+     *
      * @param string $channel
      * @param string $message
      * @param string $identity
-     * @return Client\Response
+     * @param bool   $returnTimestamp
+     * @return Client\Response|string
      */
-    public function message($channel, $message, $identity)
+    public function message($channel, $message, $identity, $returnTimestamp = false)
     {
-        return $this->client->send(
+        $response = $this->client->send(
             Actions::ACTION_POST_MESSAGE,
             [
                 'channel' => $channel,
@@ -43,5 +47,40 @@ class Messaging
             ],
             $identity
         );
+
+        if ($returnTimestamp && $response->getStatus()) {
+            $response = $response->getData()['timestamp'];
+        }
+
+        return $response;
     }
+
+    /**
+     * if $returnTimestamp is set to true it will return the Timestamp of the Messgae.
+     * The Request must be successfull if not it will return the complete Response
+     *
+     * @param string $channel
+     * @param string $message
+     * @param string $timestamp
+     * @param bool   $returnTimestamp
+     * @return Client\Response|string
+     */
+    public function update($channel, $message, $timestamp, $returnTimestamp = false)
+    {
+        $response = $this->client->send(
+            Actions::ACTION_CHAT_UPDATE,
+            [
+                'channel'   => $channel,
+                'text'      => $message,
+                'timestamp' => $timestamp
+            ]
+        );
+
+        if ($returnTimestamp && $response->getStatus()) {
+            $response = $response->getData()['timestamp'];
+        }
+
+        return $response;
+    }
+
 }

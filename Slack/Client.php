@@ -107,6 +107,8 @@ class Client
         $url->setPath($action->getAction());
         $url->setQuery($requestParams);
 
+        var_dump($requestParams);
+
         return $url;
     }
 

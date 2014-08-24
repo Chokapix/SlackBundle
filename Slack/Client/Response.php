@@ -8,14 +8,16 @@ class Response
 {
     const ERROR_REQUEST_ERROR = 'request_error';
 
-    const ERROR_NOT_AUTHED        = 'not_authed';
-    const ERROR_INVALID_AUTH      = 'invalid_auth';
-    const ERROR_ACCOUNT_INACTIVE  = 'account_inactive';
-    const ERROR_CHANNEL_NOT_FOUND = 'channel_not_found';
-    const ERROR_IS_ARCHIVED       = 'is_archived';
-    const ERROR_MSG_TO_LONG       = 'msg_too_long';
-    const ERROR_NO_TEXT           = 'no_text';
-    const ERROR_RATE_LIMITED      = 'rate_limited';
+    const ERROR_NOT_AUTHED           = 'not_authed';
+    const ERROR_INVALID_AUTH         = 'invalid_auth';
+    const ERROR_ACCOUNT_INACTIVE     = 'account_inactive';
+    const ERROR_CHANNEL_NOT_FOUND    = 'channel_not_found';
+    const ERROR_IS_ARCHIVED          = 'is_archived';
+    const ERROR_MSG_TO_LONG          = 'msg_too_long';
+    const ERROR_NO_TEXT              = 'no_text';
+    const ERROR_RATE_LIMITED         = 'rate_limited';
+    const ERROR_CANT_UPDATE_MESSSAGE = 'cant_update_message';
+    const ERROR_EDIT_WINDOW_CLOSED   = 'edit_window_closed';
 
     /**
      * @var bool
