@@ -16,6 +16,7 @@ class Actions
     const ACTION_CHANNELS_HISTORY = 'channels.history';
     const ACTION_FILES_UPLOAD = 'files.upload';
     const ACTION_USERS_LIST = 'users.list';
+    const ACTION_REACTIONS_ASS = 'reactions.add';
 
     /**
      * @var array
@@ -30,7 +31,8 @@ class Actions
         self::ACTION_CHANNELS_INVITE => 'ChannelsInvite',
         self::ACTION_CHANNELS_HISTORY => 'ChannelsHistory',
         self::ACTION_FILES_UPLOAD => 'FilesUpload',
-        self::ACTION_USERS_LIST => 'UsersList'
+        self::ACTION_USERS_LIST => 'UsersList',
+        self::ACTION_REACTIONS_ASS => 'ReactionsAdd',
     ];
 
     /**
