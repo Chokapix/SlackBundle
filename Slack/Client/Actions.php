@@ -16,6 +16,7 @@ class Actions
     const ACTION_CHANNELS_HISTORY = 'channels.history';
     const ACTION_FILES_UPLOAD = 'files.upload';
     const ACTION_USERS_LIST = 'users.list';
+    const ACTION_REACTIONS_ADD = 'reactions.add';
 
     /**
      * @var array
